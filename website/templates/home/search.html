@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block title%} {% endblock%}
+{% block content %}
+
+
+ <!-- Breadcrumb Area Start -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({% static 'img/bg-img/er.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <h2 class="page-title">Search with title</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="/"><i class="icon_house_alt"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Search</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+    <div class="container">
+        <div class="row" style="margin-top: 5em;">
+
+    <div class="col-lg-3"></div>
+            
+        
+    <div class="col-lg-6">
+    <form class="form-inline my-2 " action="" method="GET">
+                         <input class="form-control mr-sm-2 my-md-1 " type="search" placeholder="search with app name" aria-label="Search" style="width: 80%;" name="q">
+                        <button class="btn  my-4 my-sm-0 btn-md" type="submit" >
+                          <div class="search-icon" data-toggle="modal" data-target="#searchModal"><i class="ti-search"></i></div>  
+                        </button>
+    </form>
+    </div>
+    <div class="col-lg-3"></div>
+    </div>
+        
+    </div>
+   
+
+     <!-- Blog Area Start -->
+    <div class="alime-blog-area section-padding-80-0 mb-70">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Blog Area -->
+                {% for s in all_articles %}
+                <div class="col-12 col-lg-4">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
+                        <!-- Post Thumbnail -->
+                        
+                        <a href="#" class="post-thumbnail">
+                        {% thumbnail s.image "400x250" crop="center" as h %}
+                        <img width="{{ h.width }}" height="{{ h.height }}" src="{{ h.url }}" alt="">
+                        {% endthumbnail%}
+                        </a>
+                       
+                        <!-- Post Catagory -->
+                        <a href="#" class="btn post-catagory">{{s.category}}</a>
+                        <!-- Post Conetent -->
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <a href="#">{{s.posted_on}}</a>
+                                <a href="#">3 Comment</a>
+                            </div>
+                            <a href="/article/{{s.id}}" class="post-title">{{s.title}}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+              
+               
+
+               
+               
+               
+
+                
+
+              
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

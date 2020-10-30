@@ -1,0 +1,131 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet"> 
+    <!-- Title -->
+    <title>Alime - Photography HTML Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/core-img/favicon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- /Preloader -->
+
+    
+
+    <!-- Header Area Start -->
+    <header class="header-area">
+        <!-- Main Header Start -->
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Classy Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alimeNav">
+
+                        <!-- Logo -->
+                       <a style="text-decoration: none;font-family: 'Syne Mono', monospace;font-size: 40px !important;color: #fff" href="/" class="nav-brand b-4 font-weight-bold">Yacine<span class="font-weight-bold" style="color: #ef1b48;font-family: 'Syne Mono', monospace;font-size: 40px !important;">FB</span></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+                            <!-- Menu Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul id="nav">
+                                    <li class="active"><a href="/">Home</a></li>
+                                   
+                                    <li><a href="/about">About</a></li>
+                                    <li><a href="/viewer">Viewer</a></li>
+                                    <li><a href="/blog">Blog</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                     <li><a href="/search">Search</a></li>
+                                </ul>
+
+                                <!-- Search Icon -->
+                               
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Area End -->
+
+    
+{% block content %}
+
+{% endblock %}
+
+
+
+<!-- Footer Area Start -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-content d-flex align-items-center justify-content-between">
+                        <!-- Copywrite Text -->
+                        <div class="copywrite-text">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">YacineFB</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                        <!-- Footer Logo -->
+                        <div class="footer-logo">
+                            <a href="#"><img src="img/core-img/logo2.png" alt=""></a>
+                        </div>
+                        <!-- Social Info -->
+                        <div class="social-info">
+                            <a href="#"><i class="ti-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="ti-twitter-alt" aria-hidden="true"></i></a>
+                            <a href="#"><i class="ti-linkedin" aria-hidden="true"></i></a>
+                            <a href="#"><i class="ti-pinterest" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Area End -->
+
+    <!-- **** All JS Files ***** -->
+    <!-- jQuery 2.2.4 -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- Popper -->
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- All Plugins -->
+    <script src="{% static 'js/alime.bundle.js' %}"></script>
+    <!-- Active -->
+    <script src="{% static 'js/default-assets/active.js' %}"></script>
+
+</body>
+
+</html>

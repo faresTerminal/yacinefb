@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}{% endblock%}
+{% block content %}
+
+<!-- Breadcrumb Area Start -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({% static 'img/bg-img/er.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <h2 class="page-title">Latest Apps</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="/"><i class="icon_house_alt"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Viewer</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+<div class="container">
+	<div class="row" style="margin-top: 5em;">
+		<div class="col-lg-12">
+
+
+    <!-- Follow Area Start -->
+    <section class="follow-area clearfix">
+        <!-- Instagram Feed Area -->
+         <h3 class=".h3 text-center m-2" >Blog</h3>
+         <h6 class=".h6 text-center" style="margin-bottom: 4em;">We develope amazing Blogs for you</h6>
+        <div class="instragram-feed-area owl-carousel">
+           
+            {% for d in blogs %}
+            <div class="single-instagram-item">
+                <img src="{{d.image.url }}" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="/apps/{{ d.id }}">
+                         <span><b>{{d.category}}</b> </span><br>
+                        <span>{{ d.title }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+    </section>
+    <!-- Follow Area End -->
+
+    
+			
+		</div>
+
+		<div class="col-lg-12" style="margin-top: 8em;">
+
+
+    <!-- Follow Area Start -->
+    <section class="follow-area clearfix">
+        <!-- Instagram Feed Area -->
+         <h3 class=".h3 text-center m-2" >Portfolios</h3>
+         <h6 class=".h6 text-center" style="margin-bottom: 4em;">We develope amazing Blogs for you</h6>
+        <div class="instragram-feed-area owl-carousel">
+           
+            {% for d in portfolios %}
+            <div class="single-instagram-item">
+                <img src="{{d.image.url }}" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="/apps/{{ d.id }}">
+                        <span><b>{{d.category}}</b> </span><br>
+                        <span>{{ d.title }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+    </section>
+    <!-- Follow Area End -->
+
+    
+			
+		</div>
+
+		<div class="col-lg-12" style="margin-top: 8em;">
+
+
+    <!-- Follow Area Start -->
+    <section class="follow-area clearfix">
+        <!-- Instagram Feed Area -->
+         <h3 class=".h3 text-center m-2" >E-commerce</h3>
+         <h6 class=".h6 text-center" style="margin-bottom: 4em;">We develope amazing Blogs for you</h6>
+        <div class="instragram-feed-area owl-carousel">
+           
+            {% for d in ecommerce %}
+            <div class="single-instagram-item">
+                <img src="{{d.image.url }}" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="/apps/{{ d.id }}">
+                         <span><b>{{d.category}}</b> </span><br>
+                        <span>{{ d.title }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+    </section>
+    <!-- Follow Area End -->
+
+    
+			
+		</div>
+
+
+
+		
+	</div>
+	
+</div>
+
+{% endblock %}

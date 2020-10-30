@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}الصفحة الرئسية{% endblock%}
+{% block content %}
+
+<!-- Welcome Area Start -->
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+            <!-- Single Slide -->
+            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url({% static 'img/bg-img/er.jpg' %});">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <!-- Welcome Text -->
+                        <div class="col-12 col-lg-8 col-xl-6">
+                            <div class="welcome-text">
+                                <h2 style="font-family: 'Merriweather', serif;" data-animation="bounceInDown" data-delay="900ms">Hello <br>I'm Yacine </h2>
+                                <p style="font-family: 'Merriweather', serif;" data-animation="bounceInDown" data-delay="500ms">I am a django developer who will be able to contribute to your next project with a secure, readable, beautiful and scalable code infrastructure that will suit your business needs.</p>
+                                <div class="hero-btn-group" data-animation="bounceInDown" data-delay="100ms">
+                                    <a href="/about_me" class="btn alime-btn mb-3 mb-sm-0 mr-4">About Me</a>
+                                    <a class="hero-mail-contact" href="mailto:hello.alime@gmail.com">hello.alime@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </section>
+    <!-- Welcome Area End -->
+
+ <!-- Gallery Area Start -->
+    <div class="alime-portfolio-area section-padding-80 clearfix">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Projects Menu -->
+                    <div class="alime-projects-menu">
+                        <div class="portfolio-menu text-center">
+                            <button class="btn active" data-filter="*">All</button>
+                            <button class="btn" data-filter=".blog">Blog</button>
+                            <button class="btn" data-filter=".commerce">E-commerce</button>
+                            <button class="btn" data-filter=".portfolios">Portfolios</button>
+                            <button class="btn" data-filter=".video">Video</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row alime-portfolio">
+                {% for b in ecommerce %}
+                <!-- Single Gallery Item -->
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item commerce mb-30 wow fadeInUp" data-wow-delay="100ms">
+                    <div class="single-portfolio-content">
+                        <img src="{{ b.image.url }}" alt="">
+                        <div class="hover-content">
+                            <a href="{{ b.image.url }}" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                    <p class="font-weight-bolder"><a href="/apps/{{b.id}}" >{{b.title}}</a></p>
+                </div>
+                {% endfor %}
+
+                <!-- Single Gallery Item -->
+                {% for a in blog %}
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item video blog mb-30 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="single-portfolio-content">
+                        
+                        <img src="{{ a.image.url }}" alt="">
+                        <div class="hover-content">
+                            <a href="{{a.image.url }}" class="portfolio-img">+</a>
+                        </div>
+                       
+                        
+                       
+                    </div>
+                      <p class="font-weight-bolder"><a href="/apps/{{a.id}}" >{{a.title}}</a></p>
+                </div>
+                {% endfor %}
+
+                <!-- Single Gallery Item -->
+                {% for c in portfolios %}
+                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item portfolios mb-30 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="single-portfolio-content">
+                        <img src="{{c.image.url }}" alt="">
+                        <div class="hover-content">
+                            <a href="{{c.image.url }}" class="portfolio-img">+</a>
+                        </div>
+                    </div>
+                     <p class="font-weight-bolder"><a href="/apps/{{c.id}}" >{{c.title}}</a></p>
+                </div>
+                {% endfor %}
+
+               </div>
+             
+
+            <div class="row">
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="700ms">
+                    <a href="/viewer" class="btn alime-btn btn-2 mt-15">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Area End -->
+
+    <!-- Follow Area Start -->
+    <section class="follow-area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Follow Instagram</h2>
+                        <p>@Alime_photographer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Feed Area -->
+        <div class="instragram-feed-area owl-carousel">
+            
+            {% for d in gallerie %}
+            <div class="single-instagram-item">
+                <img src="{{d.image.url }}" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="/apps/{{ d.id }}">
+                         <span><b>{{d.category}}</b> </span><br>
+                        <span>{{ d.title }}</span>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+           
+        </div>
+    </section>
+    <!-- Follow Area End -->
+
+
+{% endblock %}

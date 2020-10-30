@@ -1,0 +1,157 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% load thumbnail %}
+{% block title%} {% endblock%}
+{% block content %}
+
+
+ <!-- Breadcrumb Area Start -->
+    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url({% static 'img/bg-img/er.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <h2 class="page-title">Latest Blog</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html"><i class="icon_house_alt"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Area End -->
+
+    <!-- Blog Area Start -->
+    <div class="alime-blog-area section-padding-80-0 mb-70">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single Blog Area -->
+                {% for s in post %}
+                <div class="col-12 col-lg-4">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
+                        <!-- Post Thumbnail -->
+                        
+                        <a href="#" class="post-thumbnail">
+                        {% thumbnail s.image "400x250" crop="center" as h %}
+                        <img width="{{ h.width }}" height="{{ h.height }}" src="{{ h.url }}" alt="">
+                        {% endthumbnail%}
+                        </a>
+                       
+                        <!-- Post Catagory -->
+                        <a href="#" class="btn post-catagory">{{s.category}}</a>
+                        <!-- Post Conetent -->
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <a href="#">{{s.posted_on}}</a>
+                                <a href="#">3 Comment</a>
+                            </div>
+                            <a href="/article/{{s.id}}" class="post-title">{{s.title}}</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+              
+               
+
+               
+               
+               
+
+                
+
+              
+
+                
+
+            </div>
+        </div>
+    </div>
+    <!-- Blog Area End -->
+
+    <!-- Follow Area Start -->
+    <div class="follow-area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Follow Instagram</h2>
+                        <p>@Alime_photographer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instagram Feed Area -->
+        <div class="instragram-feed-area owl-carousel">
+            <!-- Single Instagram Item -->
+            <div class="single-instagram-item">
+                <img src="img/bg-img/11.jpg" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="#">
+                        <i class="ti-instagram" aria-hidden="true"></i>
+                        <span>Alime_photographer</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Single Instagram Item -->
+            <div class="single-instagram-item">
+                <img src="img/bg-img/12.jpg" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="#">
+                        <i class="ti-instagram" aria-hidden="true"></i>
+                        <span>Alime_photographer</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Single Instagram Item -->
+            <div class="single-instagram-item">
+                <img src="img/bg-img/13.jpg" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="#">
+                        <i class="ti-instagram" aria-hidden="true"></i>
+                        <span>Alime_photographer</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Single Instagram Item -->
+            <div class="single-instagram-item">
+                <img src="img/bg-img/14.jpg" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="#">
+                        <i class="ti-instagram" aria-hidden="true"></i>
+                        <span>Alime_photographer</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Single Instagram Item -->
+            <div class="single-instagram-item">
+                <img src="img/bg-img/15.jpg" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="#">
+                        <i class="ti-instagram" aria-hidden="true"></i>
+                        <span>Alime_photographer</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Single Instagram Item -->
+            <div class="single-instagram-item">
+                <img src="img/bg-img/16.jpg" alt="">
+                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                    <a href="#">
+                        <i class="ti-instagram" aria-hidden="true"></i>
+                        <span>Alime_photographer</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Follow Area End -->
+
+{% endblock %}
